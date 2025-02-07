@@ -3,10 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Project</title>
+    <title>Anime/Manga Tracker</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to My Project</h1>
-    <p>This is a basic HTML template.</p>
+    <header>
+        <h1>Anime/Manga Tracker</h1>
+    </header>
+
+    <!-- Search Bar Section -->
+    <section id="search-section">
+        <h2>Search for Anime or Manga</h2>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search for an anime or manga..." required>
+            <button type="submit">Search</button>
+        </form>
+        <div id="recent-searches">
+            <h3>Recent Searches</h3>
+            <ul id="recent-searches-list">
+                <!-- Last 3 searches will appear here -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section id="results-section">
+        <h2>Search Results</h2>
+        <div id="anime-results">
+            <!-- Results will appear here -->
+        </div>
+    </section>
+
+    <!-- Anime/Manga Details Section -->
+    <section id="details-section" style="display: none;">
+        <h2>Anime/Manga Details</h2>
+        <div id="anime-details">
+            <img src="" alt="Anime/Manga Image" id="anime-image">
+            <h3 id="anime-title"></h3>
+            <p id="anime-synopsis"></p>
+            <p><strong>Rating:</strong> <span id="anime-rating"></span></p>
+            <div id="episode-list">
+                <!-- Episode list will appear here -->
+            </div>
+            <button id="add-to-list-btn">Add to My List</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Anime/Manga Tracker</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
