@@ -152,3 +152,26 @@ async function showAnimeDetails(animeId) {
 
 // Display the recent searches when the page loads
 displayRecentSearches();
+
+
+function displaySearchResults(animeList) {
+    const resultsContainer = document.getElementById('anime-results');
+    resultsContainer.innerHTML = ''; // Clear previous results
+
+    if (animeList.length === 0) {
+        resultsContainer.innerHTML = '<p>No results found. Please try a different search.</p>';
+    } else {
+        animeList.forEach(anime => {
+            const animeDiv = document.createElement('div');
+            animeDiv.classList.add('anime-result');
+            animeDiv.innerHTML = `
+                <img src="${anime.images.jpg.image_url}" alt="${anime.title}">
+                <h3>${anime.title}</h3>
+                <p><strong>Rating:</strong> ${anime.score ? anime.score : 'N/A'}</p>
+                <button onclick="showAnimeDetails(${anime.mal_id})">View Details</button>
+            `;
+            resultsContainer.appendChild(animeDiv);
+        });
+    }
+}
+
